@@ -6,7 +6,7 @@ export default function TaskForm(){
         <>
             <form className="simple-task-form-container">
                 <input className="task-input" type="text" name="text" value={''}/>
-                <button className="task-submit" type='submit'>Add Todo</button>
+                <button className="task-submit-button" type='submit'>Add Todo</button>
             </form>
         </>
     )

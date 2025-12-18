@@ -2,7 +2,7 @@ import TaskFilters from "./TasksFilters";
 import TaskForm from "./TasksForm";
 import TaskList from "./TasksList";
 import ThemeSwitcherButton from "./ThemeSwitcherButton";
-
+import '../styles/styles-todo-app.css'
 
 export default function TodoApp(){
     return(
