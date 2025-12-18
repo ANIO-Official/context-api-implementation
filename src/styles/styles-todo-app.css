@@ -17,7 +17,7 @@ button:hover, button:focus{
     background-color: rgb(44, 52, 71);
 }
 
-.simple-task-form-container{
+.simple-todo-form-container{
     margin-top: 2rem;
     border-top: 1px solid rgb(179, 175, 175);
     padding: 1rem;
@@ -26,18 +26,18 @@ button:hover, button:focus{
     justify-content: center;
     align-items: center;
 }
-.task-input{
+.todo-input{
     background-color: white;
     height: 2rem;
     margin-right: 1rem;
     border-radius: 0.3rem;
     border: 1px solid gray;
 }
-.task-submit-button{
+.todo-submit-button{
     background-color: rgb(52, 122, 180);
 }
 
-.tasks-filter-buttons{
+.todo-filter-buttons{
     display: flex;
     flex-direction: row;
     justify-content:center;

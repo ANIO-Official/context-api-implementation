@@ -1,10 +1,10 @@
 
 
 
-export default function TaskList(){
+export default function TodoList(){
     return(
         <>
-            <ul className="tasks-list">
+            <ul className="todo-list">
                 Task List here
                 {/*Tasks <li> Creation*/}
             </ul>
