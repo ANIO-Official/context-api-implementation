@@ -68,6 +68,17 @@ button:hover, button:focus{
     background-color: rgba(88, 87, 90, 0.911);
     color: rgb(225, 229, 243);
 }
+.dark button:hover, button:focus{
+    border: 1px solid  rgb(245, 196, 36);
+    background-color: rgb(103, 41, 116);
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+
+.dark .theme-switcher-button{
+    background-color: rgb(232, 237, 247);
+    color: rgb(64, 63, 70);
+}
 
 .dark .all-button, .dark .todo-submit-button{
     background-color: rgb(206, 149, 27);  
