@@ -13,8 +13,14 @@ interface TodoAppProviderProps {
 
 export default function TodoApp({ children }: TodoAppProviderProps) {
     const [todos, setTodos] = useState<Todo[]>([])
-    const addTodo = (todo: Todo) => setTodos((prevTodos) => [...prevTodos, todo]) //Add new todo to state, data
-    const deleteTodo = (id: string) => setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== id)) //return all but the one to delete
+    const addTodo = (todo: Todo) =>{
+        setTodos((prevTodos) => [...prevTodos, todo]) //Add new todo to state, data stored
+        setFilteredTodos((prevTodos) => [...prevTodos, todo])  //Add new todo to state, shown
+    } 
+    const deleteTodo = (id: string) =>{
+        setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== id)) //return all but the one to delete
+        setFilteredTodos([...todos]) //update filtered data to show
+    }
     const editTodo = (id: string, newText: string) => setTodos((prevTodos) => prevTodos.map((todo) => todo.id === id ? { ...todo, text: newText } : todo))
     const clearCompleted = () => setTodos(prevTodos => prevTodos.filter((todo) => todo.completed !== true)) //only return active todos
     const [filteredTodos, setFilteredTodos] = useState<Todo[]>([...todos]) // Shallow copy for displaying

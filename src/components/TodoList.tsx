@@ -1,13 +1,31 @@
+import { useContext } from "react"
+import { TodoContext } from "../contexts/contexts"
+import TodoItem from "./TodoItem"
 
 
 
 export default function TodoList(){
+    const {filteredTodos, todos} = useContext(TodoContext)
+    const toDones = todos.filter((todo) => todo.completed === true).length
+    const stillActive = todos.filter((todo) => todo.completed === false).length
+
     return(
         <>
             <ul className="todo-list">
-                Task List here
-                {/*Tasks <li> Creation*/}
+                {/*Tasks <li> Creation, Prop Passing*/}
+                {
+                    filteredTodos.map((todo) => (
+                        <li className="todo-list-item" key={todo.id}>
+                            <TodoItem 
+                            todo={todo}/>
+                        </li>
+                    ))
+                }
             </ul>
+            <div className="clear-completed-container">
+                <p className="todo-left">{stillActive === 1? '1 item': `${stillActive} items`} left</p>
+                <button className="clear-completed-button">Clear Completed ({toDones})</button>
+            </div>
         </>
     )
 }

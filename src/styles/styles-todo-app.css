@@ -1,14 +1,15 @@
 .todo-app{
     background-color: rgb(225, 229, 243);
-    color: rgb(64, 63, 70);
-    width: 25vw;
-    padding: 2rem;
     border-radius: 25% 0;
-    filter:drop-shadow( 1rem 1rem rgba(60, 60, 95, 0.404))
+    color: rgb(64, 63, 70);
+    filter:drop-shadow( 1rem 1rem rgba(60, 60, 95, 0.404));
+    padding: 2rem;
+    width: 25vw;
+    height: fit-content;
 }
 button:hover, button:focus, button:active{
-    border: 1px solid  rgb(52, 122, 180);
     background-color: rgb(170, 226, 240);
+    border: 1px solid  rgb(52, 122, 180);
     color: rgb(15, 68, 102);
     outline: none;
 }
@@ -18,22 +19,22 @@ button:hover, button:focus, button:active{
 }
 
 .simple-todo-form-container{
-    margin-top: 2rem;
+    align-items: center;
     border-top: 1px solid rgb(179, 175, 175);
-    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
 }
 .todo-input{
     background-color: white;
-    color: rgb(64, 63, 70);
-    padding-left: 0.5rem;
-    height: 2rem;
-    margin-right: 1rem;
     border-radius: 0.3rem;
     border: 1px solid gray;
+    color: rgb(64, 63, 70);
+    height: 2rem;
+    margin-right: 1rem;
+    padding-left: 0.5rem;
 }
 .todo-input:hover,.todo-input:active, .todo-input:focus{
     border: 2px solid  rgb(52, 122, 180);
@@ -44,10 +45,10 @@ button:hover, button:focus, button:active{
 }
 
 .todo-filter-buttons{
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content:center;
-    align-items: center;
 }
 .todo-filter-buttons button{
     margin-right: 0.5rem;
@@ -62,6 +63,57 @@ button:hover, button:focus, button:active{
 .completed-button{
     background-color:  rgb(29, 124, 53);
 }
+
+.clear-completed-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.clear-completed-button{
+    background-color: transparent;
+    color: rgb(0, 119, 255);
+}
+.clear-completed-button:hover{
+    background-color: transparent;
+    color: rgb(12, 73, 143);
+    text-decoration: underline;
+}
+
+.todo-list-item{
+    list-style: none;
+    background-color: white;
+    padding: 0.3rem 1.5rem;
+}
+
+.todo-item-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-item-container button{
+    background-color: transparent;
+}
+.todo-check-and-item{
+    display: flex;
+    flex-direction: row;
+}
+.tick-compeleted:active{
+   background-color: blue;
+   color: white;
+}
+.edit-item{
+    background-color: white;
+    border-radius: 0.3rem;
+    border: 1px solid gray;
+    color: rgb(64, 63, 70);
+    height: 3rem;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
 /*=================DARK THEME ========================*/
 
 
@@ -75,8 +127,8 @@ button:hover, button:focus, button:active{
     color: rgb(225, 229, 243);
 }
 .dark button:hover, button:focus{
-    border: 1px solid  rgb(245, 196, 36);
     background-color: rgb(103, 41, 116);
+    border: 1px solid  rgb(245, 196, 36);
     color: rgb(255, 255, 255);
     outline: none;
 }
