@@ -9,6 +9,22 @@ export interface Todo {
   completed: Completed;
 }
 
+export interface TodoContextType{
+  todos: Todo[]
+  addTodo: (todo: Todo) => void
+  deleteTodo: (id: string) => void
+  editTodo: (id: string, newText: string) => void
+  clearCompleted: () => void
+}
+
+export interface FilterContextType{
+  setFilter: (filter:string) => void
+}
+
+export interface ThemeContextType{
+  toggleTheme: () => void
+}
+
 export interface TodoFormProps {
   // onSubmit: (newTask: Task) => void; //Adding tasks to tasks array in parent Dashboard recieve via context
   // updateFilteredDefault: (newTask: Task) => void; //Adding tasks to the filtered array in parent Dashboard. recieve via context
@@ -29,7 +45,4 @@ export interface TodoListProps {
 export interface TodoFilterProps {
   // onFilter: (value: string, filterType: string) => void; //send back filter value to set state ---set via Context now
   // tasks: Task[]; recieve via context
-}
-export interface Filters {
-  completed?: Completed; //filter set to compelted 
 }
