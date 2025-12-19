@@ -11,6 +11,7 @@ export interface Todo {
 
 export interface TodoContextType{
   todos: Todo[]
+  filteredTodos: Todo[]
   addTodo: (todo: Todo) => void
   deleteTodo: (id: string) => void
   editTodo: (id: string, newText: string) => void

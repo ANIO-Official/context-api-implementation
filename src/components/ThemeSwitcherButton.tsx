@@ -1,7 +1,22 @@
+import { useContext, useState } from "react"
+import { ThemeContext } from "../contexts/contexts"
+
+
 export default function ThemeSwitcherButton() {
+    const {toggleTheme} = useContext(ThemeContext)
+    const [text, setText] = useState<string>('Switch to Dark 🌙')
+
+    const handleThemeChange = () =>{
+        toggleTheme()
+        setText( prevText =>
+          prevText === 'Switch to Dark 🌙'? 'Switch to Light 🌞':'Switch to Dark 🌙'
+        )
+    }
+
+  
   return (
     <>
-      <button className="theme-switcher-button">Switch to Dark</button>
+      <button onClick={handleThemeChange} className="theme-switcher-button">{text}</button>
     </>
   );
 }

@@ -43,7 +43,7 @@ button:hover, button:focus{
     justify-content:center;
     align-items: center;
 }
-.tasks-filter-buttons button{
+.todo-filter-buttons button{
     margin-right: 0.5rem;
 }
 
@@ -55,4 +55,28 @@ button:hover, button:focus{
 }
 .completed-button{
     background-color:  rgb(29, 124, 53);
+}
+/*=================DARK THEME ========================*/
+
+
+.dark{
+    background-color: rgb(64, 63, 70);
+    color: rgb(225, 229, 243);
+}
+
+.dark input{
+    background-color: rgba(88, 87, 90, 0.911);
+    color: rgb(225, 229, 243);
+}
+
+.dark .all-button, .dark .todo-submit-button{
+    background-color: rgb(206, 149, 27);  
+}
+
+.dark .active-button{
+    background-color:  rgb(161, 42, 121);
+}
+
+.dark .completed-button{
+    background-color:  rgb(29, 124, 100);
 }
