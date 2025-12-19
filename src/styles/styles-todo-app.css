@@ -6,7 +6,7 @@
     border-radius: 25% 0;
     filter:drop-shadow( 1rem 1rem rgba(60, 60, 95, 0.404))
 }
-button:hover, button:focus{
+button:hover, button:focus, button:active{
     border: 1px solid  rgb(52, 122, 180);
     background-color: rgb(170, 226, 240);
     color: rgb(15, 68, 102);
@@ -28,10 +28,16 @@ button:hover, button:focus{
 }
 .todo-input{
     background-color: white;
+    color: rgb(64, 63, 70);
+    padding-left: 0.5rem;
     height: 2rem;
     margin-right: 1rem;
     border-radius: 0.3rem;
     border: 1px solid gray;
+}
+.todo-input:hover,.todo-input:active, .todo-input:focus{
+    border: 2px solid  rgb(52, 122, 180);
+    outline: none;
 }
 .todo-submit-button{
     background-color: rgb(52, 122, 180);
