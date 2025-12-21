@@ -19,20 +19,26 @@ export default function TodoProviders({ children }: TodoProviderProps) {
     }
 
     //Update/Editing Todos
-    const editTodo = (id: string, newText: string) =>{
-        setTodos((prevTodos) => prevTodos.map((todo) => todo.id === id ? { ...todo, text: newText } : todo)) //edit main data
-        setFilteredTodos((prevTodos) => prevTodos.map((todo) => todo.id === id ? { ...todo, text: newText } : todo))//update filtered data as well
+    const editTodo = (id: string, newValue: string | boolean) => {
+        setTodos((prevTodos) => prevTodos.map((todo) =>
+            todo.id === id && typeof newValue === 'string' ? { ...todo, text: newValue } :
+                todo.id === id && typeof newValue === 'boolean' ? { ...todo, completed: newValue } :
+                    todo)) //edit main data. Change text when new value is string, change completed when new value is boolean
+        setFilteredTodos((prevTodos) => prevTodos.map((todo) =>
+            todo.id === id && typeof newValue === 'string' ? { ...todo, text: newValue } :
+                todo.id === id && typeof newValue === 'boolean' ? { ...todo, completed: newValue } :
+                    todo))//update filtered data as well
     }
 
     //Deleting Todos
     const deleteTodo = (id: string) => {
         setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== id)) //return all but the one to delete
-        setFilteredTodos([...todos]) //update filtered todos to the todos new value array 
+        setFilteredTodos(prevTodos => prevTodos.filter((todo) => todo.id !== id)) //update filtered todos base value as well
     }
- 
+
     //Clear all completed todos
     const clearCompleted = () => setTodos(prevTodos => prevTodos.filter((todo) => todo.completed !== true)) //only return active todos
-   
+
 
     //Setting Filter Value & Updating the Filters
     const [filters, setFilters] = useState('') //all(''), active, completed
