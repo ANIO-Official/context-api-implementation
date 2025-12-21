@@ -3,9 +3,9 @@ import { ThemeContext } from "../contexts/contexts"
 
 
 export default function ThemeSwitcherButton() {
-    const {toggleTheme} = useContext(ThemeContext)
+    const {theme, toggleTheme} = useContext(ThemeContext)
     const [text, setText] = useState<string>('Switch to Dark 🌙')
-
+    
     const handleThemeChange = () =>{
         toggleTheme()
         setText( prevText =>

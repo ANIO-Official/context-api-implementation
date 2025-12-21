@@ -19,4 +19,5 @@ export const FilterContext = React.createContext<FilterContextType>({
 
 export const ThemeContext = React.createContext<ThemeContextType>({
     toggleTheme: () => console.warn('Error toggling theme.'),
+    theme: 'light'
 })

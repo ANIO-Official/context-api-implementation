@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState, type ReactNode } from "react"
 import type { TodoItemProps } from "../types"
 import { TodoContext } from "../contexts/contexts"
 
@@ -24,18 +24,17 @@ export default function TodoItem({todo}:TodoItemProps){
         }))
     }
 
-    const handleEdit = (event:React.MouseEvent<HTMLParagraphElement | HTMLButtonElement>) =>{
-        setDataValue(prevData => ({...prevData, isEditing:true})) //Set to true on both events so the edit input shows
+    //Enable editing upon clicking edit button or double click task
+    const enableEditing = (event:React.MouseEvent<HTMLParagraphElement | HTMLButtonElement>) =>{
+        setDataValue(prevData => ({...prevData, isEditing:true})) 
     }
 
-    const handleConfirm = (event:React.KeyboardEvent<HTMLInputElement> &  React.FocusEvent<HTMLInputElement>)=>{
-        if(event.key === 'Enter'){
-            editTodo(todo.id, dataValue.editText) //change on confirmation of edit (pressing enter)
+    //confirm changes upon pressing enter in the input element or clicking off the input element
+    const handleConfirm = (event:React.KeyboardEvent<HTMLInputElement> &  React.FocusEvent<HTMLDivElement>)=>{
+        //Stop editing when enter is pressed or the event target changes from the editing input field
+        if(event.key === 'Enter' || !event.currentTarget.classList.contains('edit-item') ){
+            editTodo(todo.id, dataValue.editText) //change values of particular task
             setDataValue(prevData => ({...prevData, isEditing:false}))
-        }
-        if(!event.currentTarget.onblur){
-            editTodo(todo.id, dataValue.editText) //change on confirmation of edit (leaving editing on click outside of input)
-           setDataValue(prevData => ({...prevData, isEditing:false}))
         }
     }
 
@@ -46,17 +45,17 @@ export default function TodoItem({todo}:TodoItemProps){
     return (
         <>  {
                 dataValue.isEditing? 
-                <div className="todo-item-container">
-                    <input className="edit-item" onChange={handleChangeInput} onBlur={handleConfirm} onKeyUp={handleConfirm} type="text" name='editText' value={dataValue.editText}/>
+                <div className="todo-item-container" onBlur={handleConfirm}>
+                    <input className="edit-item" onChange={handleChangeInput} onKeyUp={handleConfirm} type="text" name='editText' value={dataValue.editText}/>
                 </div> : 
                 <div className="todo-item-container">
                     <div className="todo-check-and-item">
                         <input type='checkbox' onChange={handleChangeInput} className="tick-compeleted" name="completed" checked={dataValue.completed}/>
-                        <p className="todo-item" onDoubleClick={handleEdit}>{todo.text}</p>
+                        <p className="todo-item" onDoubleClick={enableEditing}>{todo.text}</p>
                     </div>
                     
                     <div className="todo-item-buttons">
-                         <button onClick={handleEdit} className="edit-button">✏️</button>
+                         <button onClick={enableEditing} className="edit-button">✏️</button>
                         <button onClick={handleDeletion} className="delete-button">🗑️</button>
                     </div>
 

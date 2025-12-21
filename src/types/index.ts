@@ -24,6 +24,7 @@ export interface FilterContextType{
 
 export interface ThemeContextType{
   toggleTheme: () => void
+  theme: string
 }
 
 export interface TodoFormProps {
