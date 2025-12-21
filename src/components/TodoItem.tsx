@@ -59,7 +59,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
                 </div> :
                 <div className="todo-item-container">
                     <div className="todo-check-and-item">
-                        <input type='checkbox' onClick={handleToggle} className="tick-compeleted" name="completed" checked={dataValue.completed} />
+                        <input type='checkbox' onClick={handleToggle} className="tick-compeleted" name="completed" defaultChecked={dataValue.completed} />
                         {/*Has conditional text decoration when task is marked as completed based on state variable completed. */}
                         <p className={`todo-item ${dataValue.completed? 'completed': 'active'}`} style={{textDecoration:`${dataValue.completed? 'line-through': 'none'}`}} onDoubleClick={enableEditing}>{todo.text}</p>
                     </div>
