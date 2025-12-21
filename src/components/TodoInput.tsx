@@ -33,6 +33,7 @@ export default function TodoForm(){
         const newTodoForm = new FormData(form)
         addTodo(newTodo)
         form.reset()
+        setText('')
         alert('New Todo Added! Look at that prodcutivity! 🎉')
     }
 

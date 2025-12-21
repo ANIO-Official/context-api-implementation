@@ -37,7 +37,11 @@ export default function TodoProviders({ children }: TodoProviderProps) {
     }
 
     //Clear all completed todos
-    const clearCompleted = () => setTodos(prevTodos => prevTodos.filter((todo) => todo.completed !== true)) //only return active todos
+    const clearCompleted = () =>{
+        //only return active todos
+        setTodos(prevTodos => prevTodos.filter((todo) => todo.completed !== true)) 
+        setFilteredTodos(prevTodos => prevTodos.filter((todo) => todo.completed !== true)) 
+    }
 
 
     //Setting Filter Value & Updating the Filters

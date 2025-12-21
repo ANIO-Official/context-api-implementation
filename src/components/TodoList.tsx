@@ -5,9 +5,10 @@ import TodoItem from "./TodoItem"
 
 
 export default function TodoList(){
-    const {filteredTodos, todos} = useContext(TodoContext)
+    const {filteredTodos, todos, clearCompleted} = useContext(TodoContext)
     const toDones = todos.filter((todo) => todo.completed === true).length
     const stillActive = todos.filter((todo) => todo.completed === false).length
+
 
     return(
         <>
@@ -24,7 +25,7 @@ export default function TodoList(){
             </ul>
             <div className="clear-completed-container">
                 <p className="todo-left">{stillActive === 1? '1 item': `${stillActive} items`} left</p>
-                <button className="clear-completed-button">Clear Completed ({toDones})</button>
+                <button onClick={clearCompleted} className="clear-completed-button">Clear Completed ({toDones})</button>
             </div>
         </>
     )
