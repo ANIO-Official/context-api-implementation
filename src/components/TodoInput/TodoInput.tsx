@@ -41,7 +41,7 @@ export default function TodoForm(){
     return(
         <>
             <form onSubmit={handleAddTodo} className="simple-todo-form-container">
-                <input onChange={handleInputChange} className="todo-input" type="text" name="text" value={text}/>
+                <input onChange={handleInputChange} className="todo-input" type="text" name="text" value={text} placeholder="Study at 3pm on Saturday.."/>
                 <button className="todo-submit-button" type='submit'>Add Todo</button>
             </form>
         </>

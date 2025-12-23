@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Todo App ✅ | React Context API Implementation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+_A React + TypeScript + Vite project focused on  building a functional Todo application that leverages React's Context API for managing the application's states instead of propdrilling._
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+The purpose of this project is to provide practical experience in designing multiple contexts, implementing providers, consuming context values in components, and handling more involved state updates. 
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Users should be able to:
 
-## Expanding the ESLint configuration
+- Change Theme
+- Create new todos
+- Read todos
+- Update todos
+- Delete Todos & all completed todos
+- View active todos left.
+- View saved todos & theme upon reopening web application.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Todo App Preview Image](public\todo-list-preview-ANIO.png)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Built with
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- REACT
+- JSX
+- Vue
+- TypeScript
+- CSS
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Resources
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Per Scholas Module 10 | Lessons 5, 6
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+[React Counter Lab](https://github.com/ANIO-Official/react-counter) | Reused and refactored my previous code fo CSS.
+
+[React Dashboard SBA](https://github.com/ANIO-Official) | Reused and refactored my previous code for JSX & TS.
+
+## How to Use
+
+Required: Have Node and NPM installed.
+
+1.  Clone the repository or Download the ZIP file and extract the files.
+2.  Open the file in Visual Studio Code.
+3.  Open the Terminal using Ctrl + ~
+4.  cd into the directory 'react-counter' in the terminal.
+
+    **Ensure NPM is is installed for the project to run:** 
+
+      inside the terminal window run npm i to install npm
+
+5.  (Once NPM is indeed installed in the project file directory, you'll see a node modules folder) Run the project using "npm run dev" in the terminal.
+6.  You should see 3 options appear. Follow the link for the Local option. Such as "http://localhost:5173/"
+
+A web app in your default browser will appear with the todo list app available for use:
+
+- Add todos via the input field + 'Enter' key or clicking 'Add Todo'
+- Filter and view todos with the All, Active, and Completed.
+- Update todos' status by clicking their checkbox to mark as completed or uncheck to mark as active.
+- Update todos' values by double clicking their text or pressing the pencil to edit. Click off the box or press enter to comfirm your changes.
+- Trash a todo by clicking it's 'bin' icon to the right.
+- Clear all completed todos by clicking 'Clear Completed (current # of completed)'
+- View the amount of active todos left at the bottom left
+- Toggle between light and dark mode.
+- View previous (not deleted) todos and keep your theme upon reload.
+
+
+## Author
+
+- LinkedIn - [Amanda Ogletree](https://www.linkedin.com/in/amanda-ogletree-a61b60168)
