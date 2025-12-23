@@ -55,8 +55,18 @@ export default function TodoProviders({ children }: TodoProviderProps) {
     }
 
     //Setting Filter Value & Updating the Filters
-    const [filters, setFilters] = useState('') //all(''), active, completed
-    const setFilter = (filter: string) => setFilters(filter)
+    const [currentFilter, setFilters] = useState('') //all(''), active, completed
+
+    const setFilter = (newFilter: string) =>{
+        setFilters(newFilter)
+        if(newFilter === 'active'){
+            setFilteredTodos([...todos.filter((todo) => todo.completed !== true)])//show active
+        }else if(newFilter === 'completed'){
+            setFilteredTodos([...todos.filter((todo) => todo.completed === true)]) //show completed
+        }else{
+            setFilteredTodos([...todos]) // Show all data
+        }
+    }
 
     //Setting Theme & Updating Theme
     const [theme, setTheme] = useState(parsedLocalData.theme)
@@ -81,7 +91,7 @@ export default function TodoProviders({ children }: TodoProviderProps) {
 
     //All Context Values
     const todoContextValue: TodoContextType = useMemo(() => ({ todos, filteredTodos, addTodo, deleteTodo, editTodo, clearCompleted }), [todos, filteredTodos])
-    const filterContextValue: FilterContextType = useMemo(() => ({ setFilter }), [filters])
+    const filterContextValue: FilterContextType = useMemo(() => ({ setFilter }), [currentFilter])
     const themeContextValue: ThemeContextType = useMemo(() => ({ theme, toggleTheme }), [theme])
 
     return (

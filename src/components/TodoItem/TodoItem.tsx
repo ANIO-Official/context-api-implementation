@@ -8,7 +8,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
     const [dataValue, setDataValue] = useState({
         isEditing: false, //For updating todo from <p> to <input type='text'/>
         editText: todo.text, //For updating todo's value on change when set to an input element.
-        completed: false //For toggling if task is completed.
+        completed: todo.completed //For toggling if task is completed.
     })
 
     //Update todo text value on input change. 
