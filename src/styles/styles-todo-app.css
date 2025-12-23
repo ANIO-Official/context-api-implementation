@@ -80,6 +80,12 @@ button:hover, button:focus, button:active{
     color: rgb(12, 73, 143);
     text-decoration: underline;
 }
+.todo-list{
+    height: 10rem;
+    overflow: "scroll"; 
+    overflow-x: hidden;
+    scrollbar-color:  rgb(255, 213, 27) transparent;
+}
 
 .todo-list-item{
     list-style: none;
