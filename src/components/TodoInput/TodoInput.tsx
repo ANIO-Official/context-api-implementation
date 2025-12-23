@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
-import { TodoContext } from "../contexts/contexts"
-import type { Todo } from "../types"
+import { TodoContext } from "../../contexts/contexts"
+import type { Todo } from "../../types/index"
 
 
 
@@ -31,11 +31,12 @@ export default function TodoForm(){
         }
         const form = event.currentTarget
         const newTodoForm = new FormData(form)
-        addTodo(newTodo)
+        addTodo(newTodo) //Update todos, filtered todos, and local storage
         form.reset()
         setText('')
         alert('New Todo Added! Look at that prodcutivity! 🎉')
     }
+    
 
     return(
         <>

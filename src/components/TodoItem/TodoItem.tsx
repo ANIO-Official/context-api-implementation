@@ -1,6 +1,6 @@
-import { useContext, useState, type ReactNode } from "react"
-import type { TodoItemProps } from "../types"
-import { TodoContext } from "../contexts/contexts"
+import { useContext, useState } from "react"
+import type { TodoItemProps } from "../../types"
+import { TodoContext } from "../../contexts/contexts"
 
 
 export default function TodoItem({ todo }: TodoItemProps) {

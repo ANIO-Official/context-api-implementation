@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { FilterContext, TodoContext } from "../contexts/contexts"
+import { FilterContext, TodoContext } from "../../contexts/contexts"
 
 export default function TodoFilters(){
     const {setFilter} = useContext(FilterContext)

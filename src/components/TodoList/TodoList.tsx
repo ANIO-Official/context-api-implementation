@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { TodoContext } from "../contexts/contexts"
-import TodoItem from "./TodoItem"
+import { TodoContext } from "../../contexts/contexts"
+import TodoItem from "../TodoItem/TodoItem"
 
 
 
