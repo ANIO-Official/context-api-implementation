@@ -149,3 +149,6 @@ button:hover, button:focus, button:active{
 .dark .completed-button{
     background-color:  rgb(29, 124, 100);
 }
+.dark .todo-list-item{
+    background-color:rgb(81, 81, 85);;
+}
