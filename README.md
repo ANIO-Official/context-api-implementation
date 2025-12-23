@@ -17,8 +17,8 @@ Users should be able to:
 - View active todos left.
 - View saved todos & theme upon reopening web application.
 
-![Todo App Preview Image](public\todo-list-preview-ANIO.png)
-![Todo App Preview Image](public\todo-list-preview-darkmode-ANIO.png)
+![Todo App Preview Image](public/todo-list-preview-ANIO.png)
+![Todo App Preview Image](public/todo-list-preview-darkmode-ANIO.png)
 
 
 ### Built with
